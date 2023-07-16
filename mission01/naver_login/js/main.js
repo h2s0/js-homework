@@ -5,21 +5,13 @@ const user = {
   pw:'spdlqj123!@'
 }
 
+  const idInput = document.querySelector("#userEmail");
+  const pwInput = document.querySelector("#userPassword");
 
-
-
-// 1. email 정규표현식을 사용한 validation
-
-// 아이디 값이 맞지 않으면 is--invalid 를 추가하는 것을 작성할 것이다.
-// is--invalid 가 input 의 class 값으로 들어가면 css 243 조건이 맞게 되어 빨강색 글씨가 보이게 된다.
 
 // html tag 를 js 로 가져오는 방법 1. getElementById 2. querySelector
 
 function idValidation(){
-
-  const idInput = document.querySelector("#userEmail");
-  // id 값을 이용해서 html input 태그 전체를 가져온 것임
-  
   if(!emailReg(idInput.value)) {
     // 이메일 유효성 검사와 idInput 에 적은 값이 틀린 것이 true 면, {} 실행
     idInput.classList.add('is--invalid')
@@ -41,9 +33,6 @@ function idValidation(){
   
 
 function pwValidation(){
-
-  const pwInput = document.querySelector("#userPassword");
-
   if(!pwReg(pwInput.value)) {
     pwInput.classList.add('is--invalid')
   } else {
@@ -59,11 +48,7 @@ function pwValidation(){
 
 // 4. 로그인 버튼을 클릭시 조건처리
 
-  // let, const 는 정의된 블럭 내에서만 사용 가능
-  // var 는 정의된 함수 내에서만 사용 가능
 
-  const idInput = document.querySelector("#userEmail");
-  const pwInput = document.querySelector("#userPassword");
 
 // html 에 로그인 버튼 클릭시 작동하는 function ( 클릭시 해야하는 할 일 목록 )
 
