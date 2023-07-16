@@ -59,6 +59,11 @@ function pwValidation(){
 
 // 4. 로그인 버튼을 클릭시 조건처리
 
+  // let, const 는 정의된 블럭 내에서만 사용 가능
+  // var 는 정의된 함수 내에서만 사용 가능
+
+  const idInput = document.querySelector("#userEmail");
+  const pwInput = document.querySelector("#userPassword");
 
 // html 에 로그인 버튼 클릭시 작동하는 function ( 클릭시 해야하는 할 일 목록 )
 
@@ -70,7 +75,9 @@ function login(){
     // if(로그인 작성값 === user.id && 비밀번호 작성값 === user.pw) {
     //   welcome 페이지로 이동하는 로직 (검색하면 다나와)
     // }
-
+  if ( idInput.value === user.id && pwInput.value === user.pw ) {
+    window.location.href = 'welcome.html'
+  }
 
 }
 
