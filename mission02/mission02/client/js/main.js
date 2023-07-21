@@ -11,7 +11,38 @@
 
 
 const nav = getNode('.nav');
-const 
+
+function handleSlider(e){
+
+    e.preventDefault();
+    const target = e.target.closest('li');
+
+    if(!target){
+        return;
+    }
+
+    const list = [... e.currentTarget.children];
+
+    
+    list.forEach( li => removeClass(li,'is-active'));
+
+    addClass(target,'is-active')
+
+    
+
+    console.log(list);
+
+}
+
+
+
+
+
+
+
+
+nav.addEventListener('click',handleSlider);
+
 
 
 
