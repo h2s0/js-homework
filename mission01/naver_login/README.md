@@ -47,9 +47,10 @@ id 값을 이용해서(#) html input 태그 전체를 가져온 값을 idInput, 
 
 <br/>
 <br/>
+
 ##### 함수
 
-- 아이디 validation
+- id 정규표현식을 사용한 validation
 ```js
 function idValidation(){
     if(!emailReg(idInput.value)) {
@@ -64,13 +65,16 @@ function idValidation(){
 if문 해석 : 이메일 유효성 검사와 idInput 에 적은 값이 틀린 것이 true 면,
 { 빨강 글씨가 보이게 만드는 코드 } 를 실행한다.
 <br/>
+false면 해당 input에 is--invalid 추가
+true면 해당 input에 is--invalid 제거해주어야 한다.
+
 is--invalid 는 값이 틀리면 실행되어야하기 때문에 부정연산자 !를 넣어 코드를 작성해주었다.
 <br/>
 기본상태가 display : none 이니까 else 가 필요없다고 생각하였는데, 직접 사용해본 결과 잘못된 값을 입력한 뒤 옳은 값 을 입력했을 때 빨강 글씨를 없애기 위해서 필요하다는 것을 확인하고 추가하였다.
 <br/>
 <br/>
 
-- 비밀번호 validation
+- pw 정규표현식을 사용한 validation
 
 
 ```js
@@ -106,3 +110,6 @@ function login(){
 비밀번호 작성값 pwInput.value 와 user.pw 가 같다면 ===
 && : 둘 다 true 일 때만 실행, 하나라도 false일 시 실행하지 않음
 { welcome.html 페이지로 이동 }
+<br/>
+한 가지 함수는 한 가지의 역할만 하는게 좋다.
+그래서 아이디 유효성 체크, 비밀번호 유효성 체크를 따로 만들어서 login이라는 함수에 넣어주었다.
