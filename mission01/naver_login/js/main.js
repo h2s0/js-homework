@@ -9,17 +9,12 @@ const user = {
   const pwInput = document.querySelector("#userPassword");
 
 
-// html tag 를 js 로 가져오는 방법 1. getElementById 2. querySelector
-
 function idValidation(){
   if(!emailReg(idInput.value)) {
-    // 이메일 유효성 검사와 idInput 에 적은 값이 틀린 것이 true 면, {} 실행
     idInput.classList.add('is--invalid')
-    // 빨강 글씨가 보이는 코드. 값이 틀리면 실행되어야함.
   } else {
     idInput.classList.remove('is--invalid')
   }
-    // 기본상태가 display : none 이니까 else 가 필요없다고 생각하였는데, 직접 사용해본 결과 잘못된 값 -> 옳은 값 을 입력했을 때 빨강 글씨를 없애기 위해서 필요하다는 것을 확인하고 추가하였다.
 }
 
 
