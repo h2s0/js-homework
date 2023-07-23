@@ -10,11 +10,13 @@
 */
 
 
-const nav = getNode('.nav');
 const ul = getNode('.ul');
+const nickName = getNode('.nickName');
+const visualImg = getNode('.visual img');
 
 
-// nav 를 클릭하면 작동되는 함수 (= 일어나는 일)
+
+// ul 를 클릭하면 작동되는 함수 (= 일어나는 일)
 function clickImage(e){
 
     e.preventDefault();
@@ -33,12 +35,9 @@ function clickImage(e){
 
     addClass(target,'is-active')
 
-    const visualImg = getNode('.visual img');
     const index = attr(target, 'data-index');
-    const nickName = getNode('.nickName');
 
     
-
     // 세 번째 인자에 들어가야할 것 : class 이름이 data-index 인 것의 자식요소인 이미지 / alt 텍스트
     attr(visualImg,'src',`./assets/${data[index-1].src}`);
     attr(nickName,'alt',data[index-1].alt);
@@ -54,10 +53,14 @@ function clickImage(e){
 }
 
 
-
-
-// nav 를 '클릭' 하면 handleSlider 라는 함수가 작동됨
+// '클릭' 하면 handleSlider 라는 함수가 작동됨
 ul.addEventListener('click',clickImage);
+
+
+
+
+
+// 함수 분리 시도해보기
 
 
 
